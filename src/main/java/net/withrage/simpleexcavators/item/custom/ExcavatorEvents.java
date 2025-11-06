@@ -18,7 +18,7 @@ public class ExcavatorEvents {
             if (hr instanceof BlockHitResult bhr && hr.getType() == HitResult.Type.BLOCK) {
                 BlockPos hitPos = bhr.getBlockPos();
                 if (hitPos.isWithinDistance(pos, 1.5)) {
-                    HammerMiningContext.setLastHitFace(player, bhr.getSide());
+                    ExcavatorMiningContext.setLastHitFace(player, bhr.getSide());
                 }
             }
 
