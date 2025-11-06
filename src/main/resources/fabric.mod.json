@@ -10,11 +10,12 @@
       "With Rage Studios"
     ],
     "contact": {
-      "homepage": "change this later",
+      "homepage": "https://modrinth.com/mod/simpleexcavators",
+      "issues": "https://github.com/JustErikSK/SimpleExcavators-Mod/issues",
       "sources": "https://github.com/JustErikSK/SimpleExcavators-Mod"
     },
 	"license": "MIT",
-	"icon": "assets/simpleexcavators/icon.png",
+	"icon": "assets/simpleexcavators/simpleexcavators-icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
