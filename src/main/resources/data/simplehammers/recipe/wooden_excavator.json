@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "tag": "minecraft:logs"
+    }
+  },
+  "pattern": [
+    " B ",
+    " A ",
+    " A "
+  ],
+  "result": {
+    "id": "simpleexcavators:wooden_excavator",
+    "count": 1
+  }
+}

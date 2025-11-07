@@ -1,0 +1,12 @@
+{
+  "item.simpleexcavators.wooden_excavator": "Wooden Excavator",
+  "item.simpleexcavators.stone_excavator": "Stone Excavator",
+  "item.simpleexcavators.copper_excavator": "Copper Excavator",
+  "item.simpleexcavators.golden_excavator": "Golden Excavator",
+  "item.simpleexcavators.iron_excavator": "Iron Excavator",
+  "item.simpleexcavators.emerald_excavator": "Emerald Excavator",
+  "item.simpleexcavators.diamond_excavator": "Diamond Excavator",
+  "item.simpleexcavators.netherite_excavator": "Netherite Excavator",
+
+  "itemgroup.simpleexcavators": "Simple Excavator"
+}
