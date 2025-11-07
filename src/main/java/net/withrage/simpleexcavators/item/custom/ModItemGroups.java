@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 import net.withrage.simpleexcavators.SimpleExcavators;
 
 public class ModItemGroups {
-    public static final ItemGroup SIMPLE_HAMMERS = Registry.register(Registries.ITEM_GROUP,
+    public static final ItemGroup SIMPLE_EXCAVATORS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(SimpleExcavators.MOD_ID, "iron_excavator"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.simpleexcavators"))
                     .icon(() -> new ItemStack(ModItems.IRON_EXCAVATOR)).entries((displayContext, entries) -> {
