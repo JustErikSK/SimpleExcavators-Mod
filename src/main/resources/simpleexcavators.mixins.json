@@ -3,7 +3,7 @@
 	"package": "net.withrage.simpleexcavators.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExcavatorMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -3,23 +3,23 @@
 	"id": "simpleexcavators",
 	"version": "${version}",
 	"name": "Simple Excavators",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Me!"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/simpleexcavators/icon.png",
+    "description": "Mine faster and wider with Simple Excavators that break 3x3 areas of blocks at once.",
+    "authors": [
+      "JustErikSK",
+      "Satorisek",
+      "With Rage Studios"
+    ],
+    "contact": {
+      "homepage": "https://modrinth.com/mod/simpleexcavators",
+      "issues": "https://github.com/JustErikSK/SimpleExcavators-Mod/issues",
+      "sources": "https://github.com/JustErikSK/SimpleExcavators-Mod"
+    },
+    "license": "MIT",
+    "icon": "assets/simpleexcavators/simpleexcavators-icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"net.withrage.simpleexcavators.SimpleExcavators"
-		],
-		"fabric-datagen": [
-			"net.withrage.simpleexcavators.SimpleExcavatorsDataGenerator"
 		]
 	},
 	"mixins": [
@@ -30,8 +30,5 @@
 		"minecraft": "~1.21.10",
 		"java": ">=21",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
