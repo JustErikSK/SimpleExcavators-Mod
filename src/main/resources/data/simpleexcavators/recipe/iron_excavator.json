@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " B ",
+    " A ",
+    " A "
+  ],
+  "key": {
+    "A": "minecraft:stick",
+    "B": "minecraft:iron_block"
+  },
+  "result": {
+    "id": "simpleexcavators:iron_excavator",
+    "count": 1
+  }
+}
