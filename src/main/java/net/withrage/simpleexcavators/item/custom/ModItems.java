@@ -1,5 +1,6 @@
 package net.withrage.simpleexcavators.item.custom;
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -15,6 +16,15 @@ public class ModItems {
     public static final Item EMERALD_EXCAVATOR = registerItem("emerald_excavator", new ExcavatorItem(ModToolMaterial.EMERALD, 5, -2.8F, new Item.Settings().maxCount(1).maxDamage(2084)));
     public static final Item DIAMOND_EXCAVATOR = registerItem("diamond_excavator", new ExcavatorItem(ModToolMaterial.DIAMOND, 5, -2.8F, new Item.Settings().maxCount(1).maxDamage(3122)));
     public static final Item NETHERITE_EXCAVATOR = registerItem("netherite_excavator", new ExcavatorItem(ModToolMaterial.NETHERITE, 6, -2.8F, new Item.Settings().maxCount(1).maxDamage(4062)));
+
+    public static final Item EXCAVATOR_HANDLE = registerItem("excavator_handle", new Item(new FabricItemSettings()));
+    public static final Item WOODEN_EXCAVATOR_HEAD = registerItem("wooden_excavator_head", new Item(new FabricItemSettings()));
+    public static final Item STONE_EXCAVATOR_HEAD = registerItem("stone_excavator_head", new Item(new FabricItemSettings()));
+    public static final Item COPPER_EXCAVATOR_HEAD = registerItem("copper_excavator_head", new Item(new FabricItemSettings()));
+    public static final Item GOLDEN_EXCAVATOR_HEAD = registerItem("golden_excavator_head", new Item(new FabricItemSettings()));
+    public static final Item IRON_EXCAVATOR_HEAD = registerItem("iron_excavator_head", new Item(new FabricItemSettings()));
+    public static final Item EMERALD_EXCAVATOR_HEAD = registerItem("emerald_excavator_head", new Item(new FabricItemSettings()));
+    public static final Item DIAMOND_EXCAVATOR_HEAD = registerItem("diamond_excavator_head", new Item(new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(SimpleExcavators.MOD_ID, name), item);
