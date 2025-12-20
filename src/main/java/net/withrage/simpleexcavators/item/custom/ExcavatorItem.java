@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.withrage.simpleexcavators.SimpleExcavators;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -46,7 +47,7 @@ public class ExcavatorItem extends MiningToolItem {
             if (!state.isIn(BlockTags.SHOVEL_MINEABLE)) {
                 return result;
             }
-            if (player.isSneaking()) {
+            if (SimpleExcavators.CONFIG.sneakMines1x1 && player.isSneaking()) {
                 return result;
             }
             Direction hitFace = ExcavatorMiningContext.consumeLastHitFace(player);
