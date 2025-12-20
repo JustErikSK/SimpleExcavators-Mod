@@ -6,16 +6,17 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.withrage.simpleexcavators.SimpleExcavators;
+import net.withrage.simpleexcavators.config.SimpleExcavatorsConfig;
 
 public class ModItems {
-    public static final Item WOODEN_EXCAVATOR = registerItem("wooden_excavator", new ExcavatorItem(ModToolMaterial.WOOD, 1, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavators.CONFIG.woodenDurability)));
-    public static final Item STONE_EXCAVATOR = registerItem("stone_excavator", new ExcavatorItem(ModToolMaterial.STONE, 1, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavators.CONFIG.stoneDurability)));
-    public static final Item COPPER_EXCAVATOR = registerItem("copper_excavator", new ExcavatorItem(ModToolMaterial.COPPER, 1, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavators.CONFIG.copperDurability)));
-    public static final Item GOLDEN_EXCAVATOR = registerItem("golden_excavator", new ExcavatorItem(ModToolMaterial.GOLD, 1, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavators.CONFIG.goldenDurability)));
-    public static final Item IRON_EXCAVATOR = registerItem("iron_excavator", new ExcavatorItem(ModToolMaterial.IRON, 2, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavators.CONFIG.ironDurability)));
-    public static final Item EMERALD_EXCAVATOR = registerItem("emerald_excavator", new ExcavatorItem(ModToolMaterial.EMERALD, 3, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavators.CONFIG.emeraldDurability)));
-    public static final Item DIAMOND_EXCAVATOR = registerItem("diamond_excavator", new ExcavatorItem(ModToolMaterial.DIAMOND, 3, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavators.CONFIG.diamondDurability)));
-    public static final Item NETHERITE_EXCAVATOR = registerItem("netherite_excavator", new ExcavatorItem(ModToolMaterial.NETHERITE, 4, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavators.CONFIG.netheriteDurability)));
+    public static final Item WOODEN_EXCAVATOR = registerItem("wooden_excavator", new ExcavatorItem(ModToolMaterial.WOOD, 1, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.woodenDurability)));
+    public static final Item STONE_EXCAVATOR = registerItem("stone_excavator", new ExcavatorItem(ModToolMaterial.STONE, 1, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.stoneDurability)));
+    public static final Item COPPER_EXCAVATOR = registerItem("copper_excavator", new ExcavatorItem(ModToolMaterial.COPPER, 1, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.copperDurability)));
+    public static final Item GOLDEN_EXCAVATOR = registerItem("golden_excavator", new ExcavatorItem(ModToolMaterial.GOLD, 1, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.goldenDurability)));
+    public static final Item IRON_EXCAVATOR = registerItem("iron_excavator", new ExcavatorItem(ModToolMaterial.IRON, 2, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.ironDurability)));
+    public static final Item EMERALD_EXCAVATOR = registerItem("emerald_excavator", new ExcavatorItem(ModToolMaterial.EMERALD, 3, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.emeraldDurability)));
+    public static final Item DIAMOND_EXCAVATOR = registerItem("diamond_excavator", new ExcavatorItem(ModToolMaterial.DIAMOND, 3, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.diamondDurability)));
+    public static final Item NETHERITE_EXCAVATOR = registerItem("netherite_excavator", new ExcavatorItem(ModToolMaterial.NETHERITE, 4, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.netheriteDurability)));
 
     public static final Item EXCAVATOR_HANDLE = registerItem("excavator_handle", new Item(new FabricItemSettings()));
     public static final Item WOODEN_EXCAVATOR_HEAD = registerItem("wooden_excavator_head", new Item(new FabricItemSettings()));

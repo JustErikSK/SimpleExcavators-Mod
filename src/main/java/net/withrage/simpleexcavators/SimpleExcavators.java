@@ -12,11 +12,10 @@ import org.slf4j.LoggerFactory;
 public class SimpleExcavators implements ModInitializer {
 	public static final String MOD_ID = "simpleexcavators";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	public static SimpleExcavatorsConfig CONFIG;
 
 	@Override
 	public void onInitialize() {
-		CONFIG = SimpleExcavatorsConfig.load();
+		SimpleExcavatorsConfig.load();
         ModItems.registerModItems();
         ModItemGroups.registerItemGroups();
         ExcavatorEvents.register();
