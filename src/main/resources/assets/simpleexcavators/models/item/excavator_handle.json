@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "simpleexcavator:item/excavator_handle"
+    "layer0": "simpleexcavators:item/excavator_handle"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "simpleexcavator:item/copper_excavator_head"
+    "layer0": "simpleexcavators:item/copper_excavator_head"
   }
 }

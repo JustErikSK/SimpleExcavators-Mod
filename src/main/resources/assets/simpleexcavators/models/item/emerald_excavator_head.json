@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "simpleexcavator:item/emerald_excavator_head"
+    "layer0": "simpleexcavators:item/emerald_excavator_head"
   }
 }
