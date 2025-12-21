@@ -6,16 +6,26 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.withrage.simpleexcavators.SimpleExcavators;
+import net.withrage.simpleexcavators.config.SimpleExcavatorsConfig;
 
 public class ModItems {
-    public static final Item WOODEN_EXCAVATOR = registerExcavator("wooden_excavator", ModToolMaterial.WOOD, 2, -2.8F, 108, false);
-    public static final Item STONE_EXCAVATOR = registerExcavator("stone_excavator", ModToolMaterial.STONE, 3, -2.8F, 262, false);
-    public static final Item COPPER_EXCAVATOR = registerExcavator("copper_excavator", ModToolMaterial.COPPER, 3, -2.8F, 380, false);
-    public static final Item GOLDEN_EXCAVATOR = registerExcavator("golden_excavator", ModToolMaterial.GOLD, 2, -2.8F, 64, false);
-    public static final Item IRON_EXCAVATOR = registerExcavator("iron_excavator", ModToolMaterial.IRON, 4, -2.8F, 506, false);
-    public static final Item EMERALD_EXCAVATOR = registerExcavator("emerald_excavator", ModToolMaterial.EMERALD, 5, -2.8F, 2084, false);
-    public static final Item DIAMOND_EXCAVATOR = registerExcavator("diamond_excavator", ModToolMaterial.DIAMOND, 5, -2.8F, 3122, false);
-    public static final Item NETHERITE_EXCAVATOR = registerExcavator("netherite_excavator", ModToolMaterial.NETHERITE, 6, -2.8F, 4062, true);
+    public static final Item WOODEN_EXCAVATOR = registerExcavator("wooden_excavator", ModToolMaterial.WOOD, 1, -2.8F, SimpleExcavatorsConfig.woodenDurability, false);
+    public static final Item STONE_EXCAVATOR = registerExcavator("stone_excavator", ModToolMaterial.STONE, 1, -2.8F, SimpleExcavatorsConfig.stoneDurability, false);
+    public static final Item COPPER_EXCAVATOR = registerExcavator("copper_excavator", ModToolMaterial.COPPER, 1, -2.8F, SimpleExcavatorsConfig.copperDurability, false);
+    public static final Item GOLDEN_EXCAVATOR = registerExcavator("golden_excavator", ModToolMaterial.GOLD, 1, -2.8F, SimpleExcavatorsConfig.goldenDurability, false);
+    public static final Item IRON_EXCAVATOR = registerExcavator("iron_excavator", ModToolMaterial.IRON, 2, -2.8F, SimpleExcavatorsConfig.ironDurability, false);
+    public static final Item EMERALD_EXCAVATOR = registerExcavator("emerald_excavator", ModToolMaterial.EMERALD, 3, -2.8F, SimpleExcavatorsConfig.emeraldDurability, false);
+    public static final Item DIAMOND_EXCAVATOR = registerExcavator("diamond_excavator", ModToolMaterial.DIAMOND, 3, -2.8F, SimpleExcavatorsConfig.diamondDurability, false);
+    public static final Item NETHERITE_EXCAVATOR = registerExcavator("netherite_excavator", ModToolMaterial.NETHERITE, 4, -2.8F, SimpleExcavatorsConfig.netheriteDurability, true);
+
+    public static final Item EXCAVATOR_HANDLE = registerItem("excavator_handle", new Item(new Item.Settings()));
+    public static final Item WOODEN_EXCAVATOR_HEAD = registerItem("wooden_excavator_head", new Item(new Item.Settings()));
+    public static final Item STONE_EXCAVATOR_HEAD = registerItem("stone_excavator_head", new Item(new Item.Settings()));
+    public static final Item COPPER_EXCAVATOR_HEAD = registerItem("copper_excavator_head", new Item(new Item.Settings()));
+    public static final Item GOLDEN_EXCAVATOR_HEAD = registerItem("golden_excavator_head", new Item(new Item.Settings()));
+    public static final Item IRON_EXCAVATOR_HEAD = registerItem("iron_excavator_head", new Item(new Item.Settings()));
+    public static final Item EMERALD_EXCAVATOR_HEAD = registerItem("emerald_excavator_head", new Item(new Item.Settings()));
+    public static final Item DIAMOND_EXCAVATOR_HEAD = registerItem("diamond_excavator_head", new Item(new Item.Settings()));
 
     private static Item registerExcavator(String name,
                                        ToolMaterial material,
@@ -24,15 +34,17 @@ public class ModItems {
                                        int durability,
                                        boolean fireproof) {
 
-        Item.Settings settings = new Item.Settings()
-                .maxCount(1)
-                .maxDamage(durability);
+        Item.Settings settings = new Item.Settings().maxCount(1);
 
         if (fireproof) settings.fireproof();
 
         return Registry.register(Registries.ITEM,
                 new Identifier("simpleexcavators", name),
-                new ExcavatorItem(material, attackDamage, attackSpeed, settings));
+                new ExcavatorItem(material, attackDamage, attackSpeed, durability, settings));
+    }
+
+    private static Item registerItem(String name, Item item) {
+        return Registry.register(Registries.ITEM, new Identifier(SimpleExcavators.MOD_ID, name), item);
     }
 
     public static void registerModItems() {
