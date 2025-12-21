@@ -2,6 +2,7 @@ package net.withrage.simpleexcavators.item.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -26,6 +27,28 @@ public class ExcavatorItem extends MiningToolItem {
                 settings.attributeModifiers(MiningToolItem.createAttributeModifiers(material, attackDamage, attackSpeed))
                         .maxDamage(durability)
         );
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        super.inventoryTick(stack, world, entity, slot, selected);
+
+        if (world.isClient()) return;
+        if (!(entity instanceof PlayerEntity)) return;
+
+        int max = stack.getMaxDamage();
+        if (max <= 0) return;
+
+        int dmg = stack.getDamage();
+
+        if (dmg < 0) {
+            stack.setDamage(0);
+            return;
+        }
+
+        if (dmg >= max) {
+            stack.setDamage(max - 1);
+        }
     }
 
     @Override
