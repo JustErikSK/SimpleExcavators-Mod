@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "tag": "minecraft:stone_tool_materials"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AAA",
+    " A "
+  ],
+  "result": {
+    "id": "simpleexcavators:stone_excavator_head",
+    "count": 1
+  }
+}

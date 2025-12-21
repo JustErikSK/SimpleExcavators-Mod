@@ -3,16 +3,16 @@
   "category": "equipment",
   "key": {
     "A": {
-      "item": "minecraft:stick"
+      "item": "simpleexcavators:excavator_handle"
     },
     "B": {
-      "item": "minecraft:gold_block"
+      "item": "simpleexcavators:golden_excavator_head"
     }
   },
   "pattern": [
-    " B ",
+    "  B",
     " A ",
-    " A "
+    "   "
   ],
   "result": {
     "id": "simpleexcavators:golden_excavator",

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    "AAA",
+    "AAA",
+    " A "
+  ],
+  "result": {
+    "id": "simpleexcavators:copper_excavator_head",
+    "count": 1
+  }
+}

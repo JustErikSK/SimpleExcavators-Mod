@@ -3,19 +3,19 @@
   "category": "equipment",
   "key": {
     "A": {
-      "item": "simpleexcavators:excavator_handle"
+      "item": "minecraft:stick"
     },
     "B": {
-      "item": "simpleexcavators:emerald_excavator_head"
+      "tag": "minecraft:planks"
     }
   },
   "pattern": [
     "  B",
     " A ",
-    "   "
+    "B  "
   ],
   "result": {
-    "id": "simpleexcavators:emerald_excavator",
+    "id": "simpleexcavators:excavator_handle",
     "count": 1
   }
 }

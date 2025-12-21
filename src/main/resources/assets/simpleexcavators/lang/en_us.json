@@ -7,6 +7,14 @@
   "item.simpleexcavators.emerald_excavator": "Emerald Excavator",
   "item.simpleexcavators.diamond_excavator": "Diamond Excavator",
   "item.simpleexcavators.netherite_excavator": "Netherite Excavator",
+  "item.simpleexcavators.excavator_handle": "Excavator Handle",
+  "item.simpleexcavators.wooden_excavator_head": "Wooden Excavator Head",
+  "item.simpleexcavators.stone_excavator_head": "Stone Excavator Head",
+  "item.simpleexcavators.copper_excavator_head": "Copper Excavator Head",
+  "item.simpleexcavators.golden_excavator_head": "Golden Excavator Head",
+  "item.simpleexcavators.iron_excavator_head": "Iron Excavator Head",
+  "item.simpleexcavators.emerald_excavator_head": "Emerald Excavator Head",
+  "item.simpleexcavators.diamond_excavator_head": "Diamond Excavator Head",
 
   "itemgroup.simpleexcavators": "Simple Excavator"
 }
