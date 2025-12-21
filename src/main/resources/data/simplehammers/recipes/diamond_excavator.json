@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    " B ",
+    "  B",
     " A ",
-    " A "
+    "   "
   ],
   "key": {
     "A": {
-      "item": "minecraft:stick"
+      "item": "simpleexcavators:excavator_handle"
     },
     "B": {
-      "item": "minecraft:diamond_block"
+      "item": "simpleexcavators:diamond_excavator_head"
     }
   },
   "result": {

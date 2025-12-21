@@ -4,18 +4,18 @@
   "pattern": [
     "  B",
     " A ",
-    "   "
+    "B  "
   ],
   "key": {
     "A": {
-      "item": "simpleexcavators:excavator_handle"
+      "item": "minecraft:stick"
     },
     "B": {
-      "item": "simpleexcavators:golden_excavator_head"
+      "tag": "minecraft:planks"
     }
   },
   "result": {
-    "item": "simpleexcavators:golden_excavator",
+    "item": "simpleexcavators:excavator_handle",
     "count": 1
   }
 }

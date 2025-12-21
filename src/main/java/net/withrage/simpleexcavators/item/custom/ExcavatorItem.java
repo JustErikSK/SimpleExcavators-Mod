@@ -2,6 +2,7 @@ package net.withrage.simpleexcavators.item.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -13,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.withrage.simpleexcavators.config.SimpleExcavatorsConfig;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -46,7 +48,7 @@ public class ExcavatorItem extends MiningToolItem {
             if (!state.isIn(BlockTags.SHOVEL_MINEABLE)) {
                 return result;
             }
-            if (player.isSneaking()) {
+            if (SimpleExcavatorsConfig.sneakMines1x1 && player.isSneaking()) {
                 return result;
             }
             Direction hitFace = ExcavatorMiningContext.consumeLastHitFace(player);
@@ -137,6 +139,28 @@ public class ExcavatorItem extends MiningToolItem {
                 net.minecraft.block.Blocks.AIR.getDefaultState(),
                 Block.NOTIFY_ALL
         );
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        super.inventoryTick(stack, world, entity, slot, selected);
+
+        if (world.isClient()) return;
+        if (!(entity instanceof PlayerEntity)) return;
+
+        int max = stack.getMaxDamage();
+        if (max <= 0) return;
+
+        int dmg = stack.getDamage();
+
+        if (dmg < 0) {
+            stack.setDamage(0);
+            return;
+        }
+
+        if (dmg >= max) {
+            stack.setDamage(max - 1);
+        }
     }
 
     private Plane getPlaneFromHitFace(Direction face) {
