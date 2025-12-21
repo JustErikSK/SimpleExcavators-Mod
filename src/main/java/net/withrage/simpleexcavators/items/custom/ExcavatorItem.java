@@ -2,6 +2,7 @@ package net.withrage.simpleexcavators.items.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +14,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import net.withrage.simpleexcavators.config.SimpleExcavatorsConfig;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,12 +26,34 @@ public class ExcavatorItem extends MiningToolItem {
     }
 
     @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        super.inventoryTick(stack, world, entity, slot, selected);
+
+        if (world.isClient()) return;
+        if (!(entity instanceof PlayerEntity)) return;
+
+        int max = stack.getMaxDamage();
+        if (max <= 0) return;
+
+        int dmg = stack.getDamage();
+
+        if (dmg < 0) {
+            stack.setDamage(0);
+            return;
+        }
+
+        if (dmg >= max) {
+            stack.setDamage(max - 1);
+        }
+    }
+
+    @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         boolean result = super.postMine(stack, world, state, pos, miner);
 
         if (!world.isClient() && miner instanceof PlayerEntity player) {
             if (!state.isIn(BlockTags.SHOVEL_MINEABLE)) return result;
-            if (player.isSneaking()) return result;
+            if (SimpleExcavatorsConfig.sneakMines1x1 && player.isSneaking()) return result;
 
             Direction face = ExcavatorMiningContext.consumeLastHitFace(player);
             if (face == null) face = fallbackFace(player);

@@ -4,14 +4,14 @@
   "pattern": [
     "  B",
     " A ",
-    "   "
+    "B  "
   ],
   "key": {
-    "A": "simpleexcavators:excavator_handle",
-    "B": "simpleexcavators:wooden_excavator_head"
+    "A": "minecraft:stick",
+    "B": "#minecraft:planks"
   },
   "result": {
-    "id": "simpleexcavators:wooden_excavator",
+    "id": "simpleexcavators:excavator_handle",
     "count": 1
   }
 }
