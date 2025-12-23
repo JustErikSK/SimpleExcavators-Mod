@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    " B ",
+    "  B",
     " A ",
-    " A "
+    "   "
   ],
   "key": {
-    "A":"minecraft:stick",
-    "B": "minecraft:copper_block"
+    "A":"simpleexcavators:excavator_handle",
+    "B": "simpleexcavators:copper_excavator_head"
   },
   "result": {
     "id": "simpleexcavators:copper_excavator",
