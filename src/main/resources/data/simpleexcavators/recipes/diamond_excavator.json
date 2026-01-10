@@ -8,7 +8,7 @@
   ],
   "key": {
     "A": {
-      "item": "simpleexcavators:excavator_handle"
+      "tag": "simpleexcavators:wooden_handles"
     },
     "B": {
       "item": "simpleexcavators:diamond_excavator_head"
