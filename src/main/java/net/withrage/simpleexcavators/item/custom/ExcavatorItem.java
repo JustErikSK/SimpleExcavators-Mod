@@ -11,6 +11,7 @@ import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -55,16 +56,9 @@ public class ExcavatorItem extends MiningToolItem {
         super.inventoryTick(stack, world, entity, slot, selected);
 
         if (world.isClient()) return;
-        if (!(entity instanceof PlayerEntity)) return;
-        int max = stack.getMaxDamage();
-        if (max <= 0) return;
         int dmg = stack.getDamage();
         if (dmg < 0) {
             stack.setDamage(0);
-            return;
-        }
-        if (dmg >= max) {
-            stack.setDamage(max - 1);
         }
     }
 
@@ -108,8 +102,22 @@ public class ExcavatorItem extends MiningToolItem {
                 }
             }
         }
+        ServerPlayerEntity serverPlayer = (player instanceof ServerPlayerEntity sp) ? sp : null;
+        int remaining = player.isCreative()
+                ? Integer.MAX_VALUE
+                : (excavatorStack.getMaxDamage() - excavatorStack.getDamage());
         for (BlockPos targetPos : targets) {
-            breakOneExtraBlock(world, player, excavatorStack, origin, originState, targetPos);
+            if (remaining <= 0) break;
+
+            boolean broke = breakOneExtraBlock(world, player, excavatorStack, origin, originState, targetPos);
+            if (!broke) continue;
+            if (!player.isCreative() && serverPlayer != null) {
+                spendOneDurability(serverPlayer, Hand.MAIN_HAND, excavatorStack);
+                remaining--;
+                if (excavatorStack.getDamage() >= excavatorStack.getMaxDamage()) {
+                    break;
+                }
+            }
         }
     }
 
@@ -130,7 +138,7 @@ public class ExcavatorItem extends MiningToolItem {
     }
 
     private int make3x3Paths(ServerWorld world, ItemUsageContext ctx, BlockPos origin) {
-        var player = ctx.getPlayer();
+        ServerPlayerEntity player = (ServerPlayerEntity) ctx.getPlayer();
         ItemStack stack = ctx.getStack();
         int changed = 0;
         for (int dx = -1; dx <= 1; dx++) {
@@ -141,7 +149,8 @@ public class ExcavatorItem extends MiningToolItem {
                 BlockState newState = PATH_STATES.get(world.getBlockState(pos).getBlock());
                 if (newState == null) continue;
                 world.setBlockState(pos, newState);
-                spendOneDurability(player, stack, ctx.getHand());
+                assert player != null;
+                spendOneDurability(player, ctx.getHand(), stack);
                 changed++;
             }
         }
@@ -154,10 +163,8 @@ public class ExcavatorItem extends MiningToolItem {
         return remaining > 0;
     }
 
-    private void spendOneDurability(LivingEntity user, ItemStack stack, Hand hand) {
-        if (!(user instanceof PlayerEntity player)) return;
+    private static void spendOneDurability(ServerPlayerEntity player, Hand hand, ItemStack stack) {
         if (player.isCreative()) return;
-
         stack.damage(1, player, p -> p.sendToolBreakStatus(hand));
     }
 
@@ -168,48 +175,37 @@ public class ExcavatorItem extends MiningToolItem {
         return world.getBlockState(pos.up()).isAir();
     }
 
-    private void breakOneExtraBlock(World world,
-                                    PlayerEntity player,
-                                    ItemStack excavatorStack,
-                                    BlockPos originPos,
-                                    BlockState originState,
-                                    BlockPos targetPos) {
+    private static int remainingUses(ItemStack stack) {
+        int max = stack.getMaxDamage();
+        if (max <= 0) return Integer.MAX_VALUE;
+        return (max - 1) - stack.getDamage();
+    }
+
+    private boolean breakOneExtraBlock(World world,
+                                       PlayerEntity player,
+                                       ItemStack excavatorStack,
+                                       BlockPos originPos,
+                                       BlockState originState,
+                                       BlockPos targetPos) {
 
         if (!(world instanceof ServerWorld serverWorld)) {
-            return;
+            return false;
         }
-
         BlockState targetState = world.getBlockState(targetPos);
-        if (targetState.isAir() || targetState.getHardness(world, targetPos) < 0.0F) return;
-        if (!targetState.isIn(BlockTags.SHOVEL_MINEABLE)) return;
-        if (!excavatorStack.isSuitableFor(targetState)) return;
-        if (!player.canHarvest(targetState)) return;
+        if (targetState.isAir() || targetState.getHardness(world, targetPos) < 0.0F) return false;
+        if (!targetState.isIn(BlockTags.SHOVEL_MINEABLE)) return false;
+        if (!excavatorStack.isSuitableFor(targetState)) return false;
+        if (!player.canHarvest(targetState)) return false;
         float originHardness = originState.getHardness(world, originPos);
         float targetHardness = targetState.getHardness(world, targetPos);
-        if (targetHardness < 0) return;
+        if (targetHardness < 0) return false;
         if (originHardness >= 0 && targetHardness > originHardness + 0.5f) {
-            return;
-        }
-        boolean creative = player.isCreative();
-        if (!creative) {
-            excavatorStack.damage(1, player, (p) -> {
-                p.sendToolBreakStatus(Hand.MAIN_HAND);
-            });
+            return false;
         }
         world.breakBlock(targetPos, false, player);
-        Block.dropStacks(
-                targetState,
-                serverWorld,
-                targetPos,
-                world.getBlockEntity(targetPos),
-                player,
-                excavatorStack
-        );
-        world.setBlockState(
-                targetPos,
-                net.minecraft.block.Blocks.AIR.getDefaultState(),
-                Block.NOTIFY_ALL
-        );
+        Block.dropStacks(targetState, serverWorld, targetPos, world.getBlockEntity(targetPos), player, excavatorStack);
+        world.setBlockState(targetPos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
+        return true;
     }
 
     private Plane getPlaneFromHitFace(Direction face) {
