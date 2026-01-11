@@ -26,8 +26,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation include("org.tomlj:tomlj:1.1.1")
-	implementation "org.antlr:antlr4-runtime:4.13.1"
-	include "org.antlr:antlr4-runtime:4.13.1"
+	implementation "org.antlr:antlr4-runtime:4.11.1"
+	include "org.antlr:antlr4-runtime:4.11.1"
 }
 
 processResources {

@@ -16,9 +16,9 @@ public class ModItems {
     public static final Item IRON_EXCAVATOR = registerItem("iron_excavator", new ExcavatorItem(ModToolMaterial.IRON, 2, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.ironDurability)));
     public static final Item EMERALD_EXCAVATOR = registerItem("emerald_excavator", new ExcavatorItem(ModToolMaterial.EMERALD, 3, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.emeraldDurability)));
     public static final Item DIAMOND_EXCAVATOR = registerItem("diamond_excavator", new ExcavatorItem(ModToolMaterial.DIAMOND, 3, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.diamondDurability)));
-    public static final Item NETHERITE_EXCAVATOR = registerItem("netherite_excavator", new ExcavatorItem(ModToolMaterial.NETHERITE, 4, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.netheriteDurability)));
+    public static final Item NETHERITE_EXCAVATOR = registerItem("netherite_excavator", new ExcavatorItem(ModToolMaterial.NETHERITE, 4, -2.8F, new Item.Settings().maxCount(1).maxDamage(SimpleExcavatorsConfig.netheriteDurability).fireproof()));
 
-    public static final Item EXCAVATOR_HANDLE = registerItem("excavator_handle", new Item(new FabricItemSettings()));
+    public static final Item WOODEN_HANDLE = registerItem("wooden_handle", new Item(new FabricItemSettings()));
     public static final Item WOODEN_EXCAVATOR_HEAD = registerItem("wooden_excavator_head", new Item(new FabricItemSettings()));
     public static final Item STONE_EXCAVATOR_HEAD = registerItem("stone_excavator_head", new Item(new FabricItemSettings()));
     public static final Item COPPER_EXCAVATOR_HEAD = registerItem("copper_excavator_head", new Item(new FabricItemSettings()));
