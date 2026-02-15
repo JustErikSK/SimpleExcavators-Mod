@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "A": {
-      "item": "simpleexcavators:excavator_handle"
+      "item": "simpleexcavators:wooden_handle"
     },
     "B": {
       "item": "simpleexcavators:emerald_excavator_head"
