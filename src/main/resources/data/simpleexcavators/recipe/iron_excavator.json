@@ -3,10 +3,10 @@
   "category": "equipment",
   "key": {
     "A": {
-      "item": "simpleexcavators:excavator_handle"
+      "item": "simpleexcavators:wooden_handle"
     },
     "B": {
-      "item": "simpleexcavators:diamond_excavator_head"
+      "item": "simpleexcavators:iron_excavator_head"
     }
   },
   "pattern": [
@@ -15,7 +15,7 @@
     "   "
   ],
   "result": {
-    "id": "simpleexcavators:diamond_excavator",
+    "id": "simpleexcavators:iron_excavator",
     "count": 1
   }
 }
