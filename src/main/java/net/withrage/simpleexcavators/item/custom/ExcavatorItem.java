@@ -172,12 +172,6 @@ public class ExcavatorItem extends MiningToolItem {
         return world.getBlockState(pos.up()).isAir();
     }
 
-    private static int remainingUses(ItemStack stack) {
-        int max = stack.getMaxDamage();
-        if (max <= 0) return Integer.MAX_VALUE;
-        return (max - 1) - stack.getDamage();
-    }
-
     private boolean breakOneExtraBlock(World world,
                                        PlayerEntity player,
                                        ItemStack excavatorStack,
