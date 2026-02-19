@@ -71,12 +71,9 @@ public class ExcavatorItem extends MiningToolItem {
 
         boolean result = super.postMine(stack, world, state, pos, miner);
         if (!world.isClient && miner instanceof PlayerEntity player) {
-            if (!state.isIn(BlockTags.SHOVEL_MINEABLE)) {
-                return result;
-            }
-            if (SimpleExcavatorsConfig.sneakMines1x1 && player.isSneaking()) {
-                return result;
-            }
+            if (!state.isIn(BlockTags.SHOVEL_MINEABLE)) return result;
+            if (SimpleExcavatorsConfig.sneakMines1x1 && player.isSneaking()) return result;
+
             Direction hitFace = ExcavatorMiningContext.consumeLastHitFace(player);
             if (hitFace == null) hitFace = fallbackFace(player);
             breakExtraBlocksAround(pos, world, player, stack, state, hitFace);
