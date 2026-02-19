@@ -18,7 +18,7 @@ public class ModItems {
     public static final Item DIAMOND_EXCAVATOR = registerExcavator("diamond_excavator", ModToolMaterial.DIAMOND, 3, -2.8F, false);
     public static final Item NETHERITE_EXCAVATOR = registerExcavator("netherite_excavator", ModToolMaterial.NETHERITE, 4, -2.8F, true);
 
-    public static final Item EXCAVATOR_HANDLE = registerItem("excavator_handle");
+    public static final Item WOODEN_HANDLE = registerItem("wooden_handle");
     public static final Item WOODEN_EXCAVATOR_HEAD = registerItem("wooden_excavator_head");
     public static final Item STONE_EXCAVATOR_HEAD = registerItem("stone_excavator_head");
     public static final Item COPPER_EXCAVATOR_HEAD = registerItem("copper_excavator_head");

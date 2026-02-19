@@ -26,7 +26,7 @@ public class ModItemGroups {
                         entries.add(ModItems.EMERALD_EXCAVATOR);
                         entries.add(ModItems.DIAMOND_EXCAVATOR);
                         entries.add(ModItems.NETHERITE_EXCAVATOR);
-                        entries.add(ModItems.EXCAVATOR_HANDLE);
+                        entries.add(ModItems.WOODEN_HANDLE);
                         entries.add(ModItems.WOODEN_EXCAVATOR_HEAD);
                         entries.add(ModItems.STONE_EXCAVATOR_HEAD);
                         entries.add(ModItems.COPPER_EXCAVATOR_HEAD);
