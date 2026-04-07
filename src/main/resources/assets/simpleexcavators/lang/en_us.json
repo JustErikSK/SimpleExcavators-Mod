@@ -16,5 +16,18 @@
   "item.simpleexcavators.emerald_excavator_head": "Emerald Excavator Head",
   "item.simpleexcavators.diamond_excavator_head": "Diamond Excavator Head",
 
+  "item.simpleexcavators.all_excavators": "Excavator Advancement Trophy",
+
+  "advancements.simpleexcavators.all_excavators.title": "Digging Deep",
+  "advancements.simpleexcavators.emerald_excavator.title": "Luxury Excavation",
+  "advancements.simpleexcavators.netherite_excavator.title": "Unstoppable Force",
+
+  "advancements.simpleexcavators.all_excavators.desc": "Craft every excavator!",
+  "advancements.simpleexcavators.emerald_excavator.desc": "Craft an Emerald Excavator.",
+  "advancements.simpleexcavators.netherite_excavator.desc": "Make a Netherite Excavator.",
+
+  "advancements.simpleexcavators.root.title": "Simple Excavators",
+  "advancements.simpleexcavators.root.desc": "Make powerful hammers that can mine 3x3!",
+
   "itemgroup.simpleexcavators": "Simple Excavators"
 }
