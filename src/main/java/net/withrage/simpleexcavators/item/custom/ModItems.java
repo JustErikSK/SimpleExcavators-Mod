@@ -27,6 +27,8 @@ public class ModItems {
     public static final Item EMERALD_EXCAVATOR_HEAD = registerItem("emerald_excavator_head", new Item(new FabricItemSettings()));
     public static final Item DIAMOND_EXCAVATOR_HEAD = registerItem("diamond_excavator_head", new Item(new FabricItemSettings()));
 
+    public static final Item EXCAVATOR_ADV_TROPHY = registerItem("all_excavators", new Item(new FabricItemSettings()));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(SimpleExcavators.MOD_ID, name), item);
     }
