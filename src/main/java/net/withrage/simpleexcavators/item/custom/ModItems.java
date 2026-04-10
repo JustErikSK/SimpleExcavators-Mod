@@ -9,14 +9,14 @@ import net.minecraft.util.Identifier;
 import net.withrage.simpleexcavators.SimpleExcavators;
 
 public class ModItems {
-    public static final Item WOODEN_EXCAVATOR = registerExcavator("wooden_excavator", ModToolMaterial.WOOD, 1, -2.8F, false);
-    public static final Item STONE_EXCAVATOR = registerExcavator("stone_excavator", ModToolMaterial.STONE, 1, -2.8F, false);
-    public static final Item COPPER_EXCAVATOR = registerExcavator("copper_excavator", ModToolMaterial.COPPER, 1, -2.8F, false);
-    public static final Item GOLDEN_EXCAVATOR = registerExcavator("golden_excavator", ModToolMaterial.GOLD, 1, -2.8F, false);
-    public static final Item IRON_EXCAVATOR = registerExcavator("iron_excavator", ModToolMaterial.IRON, 2, -2.8F, false);
-    public static final Item EMERALD_EXCAVATOR = registerExcavator("emerald_excavator", ModToolMaterial.EMERALD, 3, -2.8F, false);
-    public static final Item DIAMOND_EXCAVATOR = registerExcavator("diamond_excavator", ModToolMaterial.DIAMOND, 3, -2.8F, false);
-    public static final Item NETHERITE_EXCAVATOR = registerExcavator("netherite_excavator", ModToolMaterial.NETHERITE, 4, -2.8F, true);
+    public static final Item WOODEN_EXCAVATOR = registerExcavator("wooden_excavator", ModToolMaterial.WOOD, 1, -3.2F, false);
+    public static final Item STONE_EXCAVATOR = registerExcavator("stone_excavator", ModToolMaterial.STONE, 1, -3.1F, false);
+    public static final Item COPPER_EXCAVATOR = registerExcavator("copper_excavator", ModToolMaterial.COPPER, 1, -2.9F, false);
+    public static final Item GOLDEN_EXCAVATOR = registerExcavator("golden_excavator", ModToolMaterial.GOLD, 1, -2.7F, false);
+    public static final Item IRON_EXCAVATOR = registerExcavator("iron_excavator", ModToolMaterial.IRON, 2, -3.0F, false);
+    public static final Item EMERALD_EXCAVATOR = registerExcavator("emerald_excavator", ModToolMaterial.EMERALD, 3, -2.5F, false);
+    public static final Item DIAMOND_EXCAVATOR = registerExcavator("diamond_excavator", ModToolMaterial.DIAMOND, 3, -2.6F, false);
+    public static final Item NETHERITE_EXCAVATOR = registerExcavator("netherite_excavator", ModToolMaterial.NETHERITE, 4, -2.4F, true);
 
     public static final Item WOODEN_HANDLE = registerItem("wooden_handle");
     public static final Item WOODEN_EXCAVATOR_HEAD = registerItem("wooden_excavator_head");
@@ -26,6 +26,8 @@ public class ModItems {
     public static final Item IRON_EXCAVATOR_HEAD = registerItem("iron_excavator_head");
     public static final Item EMERALD_EXCAVATOR_HEAD = registerItem("emerald_excavator_head");
     public static final Item DIAMOND_EXCAVATOR_HEAD = registerItem("diamond_excavator_head");
+
+    public static final Item EXCAVATOR_ADV_TROPHY = registerItem("all_excavators");
 
     private static Item registerExcavator(String name,
                                           ToolMaterial material,
