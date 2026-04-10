@@ -142,17 +142,19 @@ public class ExcavatorItem extends MiningToolItem {
         ServerPlayerEntity player = (ServerPlayerEntity) ctx.getPlayer();
         ItemStack stack = ctx.getStack();
         int changed = 0;
-        for (int dx = -1; dx <= 1; dx++) {
-            for (int dz = -1; dz <= 1; dz++) {
-                BlockPos pos = origin.add(dx, 0, dz);
-                if (!isPathable(world, pos)) continue;
-                if (!canSpendOneDurability(player, stack)) return changed;
-                BlockState newState = PATH_STATES.get(world.getBlockState(pos).getBlock());
-                if (newState == null) continue;
-                world.setBlockState(pos, newState);
-                assert player != null;
-                spendOneDurability(player, ctx.getHand(), stack);
-                changed++;
+        if (SimpleExcavatorsConfig.pathMaking) {
+            for (int dx = -1; dx <= 1; dx++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    BlockPos pos = origin.add(dx, 0, dz);
+                    if (!isPathable(world, pos)) continue;
+                    if (!canSpendOneDurability(player, stack)) return changed;
+                    BlockState newState = PATH_STATES.get(world.getBlockState(pos).getBlock());
+                    if (newState == null) continue;
+                    world.setBlockState(pos, newState);
+                    assert player != null;
+                    spendOneDurability(player, ctx.getHand(), stack);
+                    changed++;
+                }
             }
         }
         return changed;
