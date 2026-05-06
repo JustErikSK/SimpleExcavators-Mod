@@ -131,6 +131,9 @@ public class ExcavatorItem extends MiningToolItem {
                 ? makeSinglePath(world, ctx, origin)
                 : make3x3Paths(world, ctx, origin);
         if (changed > 0) {
+            if (ctx.getPlayer() != null) {
+                ctx.getPlayer().swingHand(ctx.getHand(), true);
+            }
             world.playSound(null, origin, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
             return ActionResult.SUCCESS;
         }
