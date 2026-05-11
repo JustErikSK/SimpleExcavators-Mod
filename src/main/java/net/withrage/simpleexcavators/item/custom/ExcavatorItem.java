@@ -131,19 +131,21 @@ public class ExcavatorItem extends Item {
     @Override
     public InteractionResult useOn(UseOnContext ctx) {
         if (!(ctx.getLevel() instanceof ServerLevel level)) return InteractionResult.PASS;
-
         Direction side = ctx.getClickedFace();
         if (side == Direction.DOWN) return InteractionResult.PASS;
-
         BlockPos origin = ctx.getClickedPos();
         if (!isPathable(level, origin)) return InteractionResult.PASS;
-
-        int changed = make3x3Paths(level, ctx, origin);
+        boolean sneaking = ctx.getPlayer() != null && ctx.getPlayer().isShiftKeyDown();
+        int changed = SimpleExcavatorsConfig.sneakPathMaking1x1 && sneaking
+                ? makeSinglePath(level, ctx, origin)
+                : make3x3Paths(level, ctx, origin);
         if (changed > 0) {
+            if (ctx.getPlayer() != null) {
+                ctx.getPlayer().swing(ctx.getHand(), true);
+            }
             level.playSound(null, origin, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;
         }
-
         return InteractionResult.PASS;
     }
 
@@ -151,17 +153,14 @@ public class ExcavatorItem extends Item {
         ServerPlayer player = ctx.getPlayer() instanceof ServerPlayer sp ? sp : null;
         ItemStack stack = ctx.getItemInHand();
         int changed = 0;
-
         if (SimpleExcavatorsConfig.pathMaking) {
             for (int dx = -1; dx <= 1; dx++) {
                 for (int dz = -1; dz <= 1; dz++) {
                     BlockPos pos = origin.offset(dx, 0, dz);
                     if (!isPathable(level, pos)) continue;
                     if (!canSpendOneDurability(player, stack)) return changed;
-
                     BlockState newState = PATH_STATES.get(level.getBlockState(pos).getBlock());
                     if (newState == null) continue;
-
                     level.setBlockAndUpdate(pos, newState);
                     if (player != null) {
                         spendOneDurability(player, ctx.getHand(), stack);
@@ -170,8 +169,22 @@ public class ExcavatorItem extends Item {
                 }
             }
         }
-
         return changed;
+    }
+
+    private int makeSinglePath(ServerLevel level, UseOnContext ctx, BlockPos pos) {
+        ServerPlayer player = ctx.getPlayer() instanceof ServerPlayer sp ? sp : null;
+        ItemStack stack = ctx.getItemInHand();
+        if (!SimpleExcavatorsConfig.pathMaking) return 0;
+        if (!isPathable(level, pos)) return 0;
+        if (!canSpendOneDurability(player, stack)) return 0;
+        BlockState newState = PATH_STATES.get(level.getBlockState(pos).getBlock());
+        if (newState == null) return 0;
+        level.setBlockAndUpdate(pos, newState);
+        if (player != null) {
+            spendOneDurability(player, ctx.getHand(), stack);
+        }
+        return 1;
     }
 
     private boolean canSpendOneDurability(Player player, ItemStack stack) {

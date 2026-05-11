@@ -12,6 +12,7 @@ public class SimpleExcavatorsConfig {
 
     public static boolean sneakMines1x1 = true;
     public static boolean pathMaking = true;
+    public static boolean sneakPathMaking1x1 = true;
 
     public static int woodenDurability = 108;
     public static int stoneDurability = 262;
@@ -38,6 +39,7 @@ public class SimpleExcavatorsConfig {
 
             sneakMines1x1 = getBoolean(toml, "general.sneakMines1x1", sneakMines1x1);
             pathMaking = getBoolean(toml, "general.pathMaking", pathMaking);
+            sneakPathMaking1x1 = getBoolean(toml, "general.sneakPathMaking1x1", sneakPathMaking1x1);
 
             woodenDurability = getInt(toml, "durability.wooden", woodenDurability);
             stoneDurability = getInt(toml, "durability.stone", stoneDurability);
@@ -77,7 +79,9 @@ public class SimpleExcavatorsConfig {
                 + "# If true, sneaking mines only 1x1 instead of 3x3.\n"
                 + "sneakMines1x1 = " + sneakMines1x1 + "\n"
                 + "# If true, excavators are able to create 3x3 dirt paths.\n"
-                + "pathMaking = " + pathMaking + "\n\n"
+                + "pathMaking = " + pathMaking + "\n"
+                + "# If true, excavators are able to create 1x1 dirt paths while sneaking.\n"
+                + "sneakPathMaking1x1 = " + sneakPathMaking1x1 + "\n\n"
                 + "[durability]\n"
                 + "# You can change the durability for each excavator here.\n"
                 + "wooden = " + woodenDurability + "\n"
