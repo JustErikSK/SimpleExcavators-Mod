@@ -1,0 +1,23 @@
+{
+  "parent": "simpleexcavators:root",
+  "display": {
+    "icon": { "id": "simpleexcavators:emerald_excavator" },
+    "title": { "translate": "advancements.simpleexcavators.emerald_excavator.title" },
+    "description": { "translate": "advancements.simpleexcavators.emerald_excavator.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted_emerald_excavator": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "simpleexcavators:emerald_excavator"
+      }
+    }
+  },
+  "requirements": [
+    ["crafted_emerald_excavator"]
+  ]
+}

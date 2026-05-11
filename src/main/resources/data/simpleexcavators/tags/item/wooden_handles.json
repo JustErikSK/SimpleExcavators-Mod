@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "simpleexcavators:wooden_handle",
+    { "id": "simplehammers:wooden_handle", "required": false }
+  ]
+}

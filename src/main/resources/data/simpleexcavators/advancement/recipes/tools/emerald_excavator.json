@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_emerald": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:emerald"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_emerald"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "simpleexcavators:emerald_excavator"
+    ]
+  },
+  "sends_telemetry_event": false
+}
