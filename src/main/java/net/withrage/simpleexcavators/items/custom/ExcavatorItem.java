@@ -121,8 +121,14 @@ public class ExcavatorItem extends MiningToolItem {
         BlockPos origin = ctx.getBlockPos();
         ItemStack stack = ctx.getStack();
         if (!isPathable(world, origin)) return ActionResult.PASS;
-        int changed = make3x3Paths(world, ctx, origin);
+        boolean sneaking = ctx.getPlayer() != null && ctx.getPlayer().isSneaking();
+        int changed = SimpleExcavatorsConfig.sneakPathMaking1x1 && sneaking
+                ? makeSinglePath(world, ctx, origin)
+                : make3x3Paths(world, ctx, origin);
         if (changed > 0) {
+            if (ctx.getPlayer() != null) {
+                ctx.getPlayer().swingHand(ctx.getHand(), true);
+            }
             world.playSound(null, origin, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
             return ActionResult.SUCCESS;
         }
@@ -142,13 +148,29 @@ public class ExcavatorItem extends MiningToolItem {
                     BlockState newState = PATH_STATES.get(world.getBlockState(pos).getBlock());
                     if (newState == null) continue;
                     world.setBlockState(pos, newState);
-                    assert player != null;
-                    spendOneDurability(player, ctx.getHand(), stack);
+                    if (player != null) {
+                        spendOneDurability(player, ctx.getHand(), stack);
+                    }
                     changed++;
                 }
             }
         }
         return changed;
+    }
+
+    private int makeSinglePath(ServerWorld world, ItemUsageContext ctx, BlockPos pos) {
+        ServerPlayerEntity player = (ServerPlayerEntity) ctx.getPlayer();
+        ItemStack stack = ctx.getStack();
+        if (!SimpleExcavatorsConfig.pathMaking) return 0;
+        if (!isPathable(world, pos)) return 0;
+        if (!canSpendOneDurability(player, stack)) return 0;
+        BlockState newState = PATH_STATES.get(world.getBlockState(pos).getBlock());
+        if (newState == null) return 0;
+        world.setBlockState(pos, newState);
+        if (player != null) {
+            spendOneDurability(player, ctx.getHand(), stack);
+        }
+        return 1;
     }
 
     private boolean canSpendOneDurability(net.minecraft.entity.player.PlayerEntity player, ItemStack stack) {

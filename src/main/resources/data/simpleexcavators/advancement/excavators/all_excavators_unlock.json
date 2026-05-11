@@ -4,7 +4,7 @@
     "icon": { "id": "simpleexcavators:all_excavators" },
     "title": { "translate": "advancements.simpleexcavators.all_excavators.title" },
     "description": { "translate": "advancements.simpleexcavators.all_excavators.desc" },
-    "frame": "task",
+    "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
