@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_diamond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:diamond"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_diamond"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "simpleexcavators:diamond_excavator"
+    ]
+  },
+  "sends_telemetry_event": false
+}
