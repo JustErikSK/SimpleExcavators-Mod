@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "simpleexcavators:wooden_excavator",
+    "simpleexcavators:stone_excavator",
+    "simpleexcavators:copper_excavator",
+    "simpleexcavators:golden_excavator",
+    "simpleexcavators:iron_excavator",
+    "simpleexcavators:emerald_excavator",
+    "simpleexcavators:diamond_excavator",
+    "simpleexcavators:netherite_excavator"
+  ]
+}
