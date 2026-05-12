@@ -1,0 +1,28 @@
+{
+  "parent": "simpleexcavators:root",
+  "display": {
+    "icon": { "id": "simpleexcavators:netherite_excavator" },
+    "title": { "translate": "advancements.simpleexcavators.netherite_excavator.title" },
+    "description": { "translate": "advancements.simpleexcavators.netherite_excavator.desc" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted_netherite_excavator": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["simpleexcavators:netherite_excavator"],
+            "count": { "min": 1 }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["crafted_netherite_excavator"]
+  ]
+}
