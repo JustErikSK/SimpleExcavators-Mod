@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "simpleexcavators:item/golden_excavator_gui"
+  }
+}

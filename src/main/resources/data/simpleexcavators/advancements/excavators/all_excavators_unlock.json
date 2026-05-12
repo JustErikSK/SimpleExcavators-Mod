@@ -1,0 +1,57 @@
+{
+  "parent": "simpleexcavators:root",
+  "display": {
+    "icon": { "item": "simpleexcavators:all_excavators" },
+    "title": { "translate": "advancements.simpleexcavators.all_excavators.title" },
+    "description": { "translate": "advancements.simpleexcavators.all_excavators.desc" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted_wooden_excavator": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "simpleexcavators:wooden_excavator" }
+    },
+    "crafted_stone_excavator": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "simpleexcavators:stone_excavator" }
+    },
+    "crafted_copper_excavator": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "simpleexcavators:copper_excavator" }
+    },
+    "crafted_iron_excavator": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "simpleexcavators:iron_excavator" }
+    },
+    "crafted_golden_excavator": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "simpleexcavators:golden_excavator" }
+    },
+    "crafted_diamond_excavator": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "simpleexcavators:diamond_excavator" }
+    },
+    "crafted_emerald_excavator": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": { "recipe_id": "simpleexcavators:emerald_excavator" }
+    },
+    "crafted_netherite_excavator": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "recipe_id": "simpleexcavators:netherite_excavator" }
+    }
+  },
+
+  "requirements": [
+    ["crafted_wooden_excavator"],
+    ["crafted_stone_excavator"],
+    ["crafted_copper_excavator"],
+    ["crafted_iron_excavator"],
+    ["crafted_golden_excavator"],
+    ["crafted_diamond_excavator"],
+    ["crafted_emerald_excavator"],
+    ["crafted_netherite_excavator"]
+  ]
+}
