@@ -1,0 +1,21 @@
+modLoader="javafml"
+loaderVersion="[63,)"
+license="MIT"
+[[mods]]
+modId="simpleexcavators"
+version="1.0.5"
+displayName="Simple Excavators"
+authors="JustErikSK, Satorisek, With Rage Studios"
+description='''Mine faster and wider with Simple Excavators that break 3x3 areas of blocks at once.'''
+[[dependencies.simpleexcavators]]
+    modId="forge"
+    mandatory=true
+    versionRange="[63,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.simpleexcavators]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[26.1.1,26.2,)"
+    ordering="NONE"
+    side="BOTH"
