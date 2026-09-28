@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "  B",
+    " A ",
+    "   "
+  ],
+  "key": {
+    "A": "#simpleexcavators:wooden_handles",
+    "B": "simpleexcavators:iron_excavator_head"
+  },
+  "result": {
+    "id": "simpleexcavators:iron_excavator",
+    "count": 1
+  }
+}

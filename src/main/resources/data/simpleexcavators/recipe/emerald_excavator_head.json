@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "AAA",
+    "AAA",
+    " A "
+  ],
+  "key": {
+    "A": "minecraft:emerald"
+  },
+  "result": {
+    "id": "simpleexcavators:emerald_excavator_head",
+    "count": 1
+  }
+}
