@@ -1,9 +1,15 @@
 {
   "parent": "simpleexcavators:root",
   "display": {
-    "icon": { "id": "simpleexcavators:netherite_excavator" },
-    "title": { "translate": "advancements.simpleexcavators.netherite_excavator.title" },
-    "description": { "translate": "advancements.simpleexcavators.netherite_excavator.desc" },
+    "icon": {
+      "id": "simpleexcavators:netherite_excavator"
+    },
+    "title": {
+      "translate": "advancements.simpleexcavators.netherite_excavator.title"
+    },
+    "description": {
+      "translate": "advancements.simpleexcavators.netherite_excavator.desc"
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
@@ -15,14 +21,20 @@
       "conditions": {
         "items": [
           {
-            "items": ["simpleexcavators:netherite_excavator"],
-            "count": { "min": 1 }
+            "items": [
+              "simpleexcavators:netherite_excavator"
+            ],
+            "count": {
+              "min": 1
+            }
           }
         ]
       }
     }
   },
   "requirements": [
-    ["crafted_netherite_excavator"]
+    [
+      "crafted_netherite_excavator"
+    ]
   ]
 }

@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:copper_ingot"
+            "items": [
+              "minecraft:diamond"
+            ]
           }
         ]
       },
@@ -13,7 +15,9 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "simpleexcavators:diamond_excavator"
+        "recipes": [
+          "simpleexcavators:diamond_excavator"
+        ]
       },
       "trigger": "minecraft:recipe_unlocked"
     }

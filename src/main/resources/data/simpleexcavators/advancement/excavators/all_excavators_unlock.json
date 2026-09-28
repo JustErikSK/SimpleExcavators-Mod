@@ -1,9 +1,15 @@
 {
   "parent": "simpleexcavators:root",
   "display": {
-    "icon": { "id": "simpleexcavators:all_excavators" },
-    "title": { "translate": "advancements.simpleexcavators.all_excavators.title" },
-    "description": { "translate": "advancements.simpleexcavators.all_excavators.desc" },
+    "icon": {
+      "id": "simpleexcavators:all_excavators"
+    },
+    "title": {
+      "translate": "advancements.simpleexcavators.all_excavators.title"
+    },
+    "description": {
+      "translate": "advancements.simpleexcavators.all_excavators.desc"
+    },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
@@ -12,46 +18,100 @@
   "criteria": {
     "crafted_wooden_excavator": {
       "trigger": "minecraft:recipe_crafted",
-      "conditions": { "recipe_id": "simpleexcavators:wooden_excavator" }
+      "conditions": {
+        "recipes": [
+          "simpleexcavators:wooden_excavator"
+        ]
+      }
     },
     "crafted_stone_excavator": {
       "trigger": "minecraft:recipe_crafted",
-      "conditions": { "recipe_id": "simpleexcavators:stone_excavator" }
+      "conditions": {
+        "recipes": [
+          "simpleexcavators:stone_excavator"
+        ]
+      }
     },
     "crafted_copper_excavator": {
       "trigger": "minecraft:recipe_crafted",
-      "conditions": { "recipe_id": "simpleexcavators:copper_excavator" }
+      "conditions": {
+        "recipes": [
+          "simpleexcavators:copper_excavator"
+        ]
+      }
     },
     "crafted_iron_excavator": {
       "trigger": "minecraft:recipe_crafted",
-      "conditions": { "recipe_id": "simpleexcavators:iron_excavator" }
+      "conditions": {
+        "recipes": [
+          "simpleexcavators:iron_excavator"
+        ]
+      }
     },
     "crafted_golden_excavator": {
       "trigger": "minecraft:recipe_crafted",
-      "conditions": { "recipe_id": "simpleexcavators:golden_excavator" }
+      "conditions": {
+        "recipes": [
+          "simpleexcavators:golden_excavator"
+        ]
+      }
     },
     "crafted_diamond_excavator": {
       "trigger": "minecraft:recipe_crafted",
-      "conditions": { "recipe_id": "simpleexcavators:diamond_excavator" }
+      "conditions": {
+        "recipes": [
+          "simpleexcavators:diamond_excavator"
+        ]
+      }
     },
     "crafted_emerald_excavator": {
       "trigger": "minecraft:recipe_crafted",
-      "conditions": { "recipe_id": "simpleexcavators:emerald_excavator" }
+      "conditions": {
+        "recipes": [
+          "simpleexcavators:emerald_excavator"
+        ]
+      }
     },
     "crafted_netherite_excavator": {
       "trigger": "minecraft:inventory_changed",
-      "conditions": { "recipe_id": "simpleexcavators:netherite_excavator" }
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "simpleexcavators:netherite_excavator"
+            ],
+            "count": {
+              "min": 1
+            }
+          }
+        ]
+      }
     }
   },
-
   "requirements": [
-    ["crafted_wooden_excavator"],
-    ["crafted_stone_excavator"],
-    ["crafted_copper_excavator"],
-    ["crafted_iron_excavator"],
-    ["crafted_golden_excavator"],
-    ["crafted_diamond_excavator"],
-    ["crafted_emerald_excavator"],
-    ["crafted_netherite_excavator"]
+    [
+      "crafted_wooden_excavator"
+    ],
+    [
+      "crafted_stone_excavator"
+    ],
+    [
+      "crafted_copper_excavator"
+    ],
+    [
+      "crafted_iron_excavator"
+    ],
+    [
+      "crafted_golden_excavator"
+    ],
+    [
+      "crafted_diamond_excavator"
+    ],
+    [
+      "crafted_emerald_excavator"
+    ],
+    [
+      "crafted_netherite_excavator"
+    ]
   ]
 }

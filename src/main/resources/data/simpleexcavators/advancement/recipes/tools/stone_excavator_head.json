@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:cobblestone"
+            "items": [
+              "minecraft:cobblestone"
+            ]
           }
         ]
       },
@@ -13,7 +15,9 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "simpleexcavators:stone_excavator_head"
+        "recipes": [
+          "simpleexcavators:stone_excavator_head"
+        ]
       },
       "trigger": "minecraft:recipe_unlocked"
     }

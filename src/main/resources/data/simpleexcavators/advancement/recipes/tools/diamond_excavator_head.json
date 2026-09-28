@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:diamond"
+            "items": [
+              "minecraft:diamond"
+            ]
           }
         ]
       },
@@ -13,7 +15,9 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "simpleexcavators:diamond_excavator_head"
+        "recipes": [
+          "simpleexcavators:diamond_excavator_head"
+        ]
       },
       "trigger": "minecraft:recipe_unlocked"
     }

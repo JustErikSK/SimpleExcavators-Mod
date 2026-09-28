@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:stick"
+            "items": [
+              "minecraft:stick"
+            ]
           }
         ]
       },
@@ -13,7 +15,9 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "simpleexcavators:wooden_excavator"
+        "recipes": [
+          "simpleexcavators:wooden_excavator"
+        ]
       },
       "trigger": "minecraft:recipe_unlocked"
     }
