@@ -16,6 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.component.SwingAnimation;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -124,9 +125,9 @@ public class ExcavatorItem extends Item {
                 : make3x3Paths(level, ctx, origin);
         if (changed > 0) {
             if (ctx.getPlayer() != null) {
-                ctx.getPlayer().swing(ctx.getHand(), true);
+                ctx.getPlayer().swing(ctx.getHand(), SwingAnimation.DEFAULT, true);
             }
-            level.playSound(null, origin, SoundEvents.SHOVEL_FLATTEN, SoundSource.BLOCKS, 1.0F, 1.0F);
+            level.playSound(null, origin, SoundEvents.SHOVEL_FLATTEN.value(), SoundSource.BLOCKS, 1.0F, 1.0F);
             return InteractionResult.SUCCESS;
         }
         return InteractionResult.PASS;
