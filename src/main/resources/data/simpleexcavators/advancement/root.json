@@ -1,0 +1,15 @@
+{
+  "display": {
+    "icon": { "id": "simpleexcavators:iron_excavator" },
+    "title": { "translate": "advancements.simpleexcavators.root.title" },
+    "description": { "translate": "advancements.simpleexcavators.root.desc" },
+    "background": "minecraft:gui/advancements/backgrounds/stone",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "tick": { "trigger": "minecraft:tick" }
+  }
+}

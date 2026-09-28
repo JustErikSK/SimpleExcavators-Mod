@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "B  ",
+    " A ",
+    "  B"
+  ],
+  "key": {
+    "A": "minecraft:stick",
+    "B": "#minecraft:planks"
+  },
+  "result": {
+    "id": "simpleexcavators:wooden_handle",
+    "count": 1
+  }
+}
